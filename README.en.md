@@ -1,6 +1,8 @@
 # dsh-bilibili-ticket
 
-A super-handy Bilibili 会员购 (membership purchase) ticketing project — highly recommended! A [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) plugin for grabbing tickets at onsale and watching sold-out tiers for re-releases (回流), with everything delegatable to the AI for precise, hands-off results.
+**A super-handy Bilibili 会员购 (membership purchase) ticketing project — highly recommended!**
+
+A [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) plugin for grabbing tickets at onsale and watching sold-out tiers for re-releases (回流), with everything delegatable to the AI for precise, hands-off results.
 
 It ships a **draggable Web monitoring panel** (manual editing, show search, parameter tuning, log monitoring) and a **process-level ticketing engine** (background high-frequency ordering + stock polling) — so the DSH agent can search shows, inspect tiers, create tasks, watch for re-releases, and report status, all without leaving the chat or the panel.
 

@@ -1,6 +1,7 @@
 # dsh-bilibili-ticket
 
-超好用的 Bilibili 会员购抢票项目（力荐）！
+**超好用的 Bilibili 会员购抢票项目（力荐）！**
+
 一个 [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) 插件，用于 B 站「会员购」抢票 + 蹲回流（回流票监控自动下单），全程都可交给 AI 托管，保证精准查找所有内容。
 
 自带一个**可拖拽的网页监控面板**（支持手动编辑、搜索演出、各项数值调节、日志监测）与**进程级抢票引擎**（后台高频下单 + 库存轮询）——让 DSH 里的 AI 帮你搜演出、看票档、建任务、盯回流、看状态，全程不用离开对话或面板。
