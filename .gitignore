@@ -1,0 +1,42 @@
+# ── Dependencies ──────────────────────────────────────────────
+node_modules/
+
+# ── Package artifacts (npm/pnpm pack output) ──────────────────
+*.tgz
+*.tar.gz
+*.tar
+
+# ── Logs ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ── Coverage / test output ────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ── Environment & secrets ─────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+
+# ── OS junk ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editors / IDEs ────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Runtime data (local plugin state, never commit) ───────────
+.bili-ticket/
+bilibili-ticket/
+*.state.json

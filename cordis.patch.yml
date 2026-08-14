@@ -1,0 +1,21 @@
+# dsh-bilibili-ticket 的 bundle patch：作为一个「组合包层」叠加到 profile 之上。
+# 本包在 package.json 声明了 dsh.bundle.patch，因此：
+#   dsh plugin --profile web add <本包路径>
+# 会自动把它加入 profile 的 bundles 列表，无需手写本文件。
+#
+# 该插件在「宿主平面(host plane)」注册：它维护一个进程级单例的抢票/蹲回流引擎，
+# 并把模型工具注册进全局 tool registry（对所有 agent 预设可见）。
+# 原因：抢票/蹲回流需要一个跨会话、进程唯一、可持久化的后台轮询器，
+# 属于「跨会话共享」的宿主能力，而非某个 agent 预设的能力。
+#
+# 可选配置（写在下方 row 的 config 里，缺省用插件内置默认值，见 README）：
+#   dataDir         数据目录（cookie/任务/日志持久化），默认 $DSH_HOME/bilibili-ticket
+#   pollIntervalMs  蹲回流轮询间隔，默认 3000
+#   stormLeadMs     开售前提前多少毫秒进入高频下单，默认 2000
+#   stormIntervalMs 高频下单单次间隔下限（会加随机抖动），默认 150
+#   orderTimeoutMs  单任务抢票/下单总超时，默认 60000
+#   enabled         是否启用（false 则不注册工具、不启动引擎），默认 true
+
+- insert:
+    - id: bilibili-ticket
+      name: 'dsh-bilibili-ticket'
