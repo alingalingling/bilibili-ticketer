@@ -26,19 +26,23 @@ It ships a **draggable Web monitoring panel** (manual editing, show search, para
 ## Install
 
 ```bash
-# 1. Clone the source
-git clone https://github.com/alingalingling/bilibili-ticketer.git
-cd bilibili-ticketer
-
-# 2. Install dependencies
-pnpm install
-
-# 3. Add to the web profile and boot
-dsh plugin --profile web add .
+# Simplest: install straight from GitHub (auto clone + install deps)
+dsh plugin --profile web add https://github.com/alingalingling/bilibili-ticketer.git
 dsh web
 ```
 
-`dsh web` is equivalent to `dsh --profile web`. If you use a prebuilt tarball instead, point `add` at its path, e.g. `dsh plugin --profile web add ./dsh-bilibili-ticket-0.1.19.tgz`.
+`dsh web` is equivalent to `dsh --profile web`. Other install methods:
+
+```bash
+# From source
+git clone https://github.com/alingalingling/bilibili-ticketer.git
+cd bilibili-ticketer
+pnpm install
+dsh plugin --profile web add .
+
+# Or a prebuilt tarball
+dsh plugin --profile web add ./dsh-bilibili-ticket-0.1.19.tgz
+```
 
 The package declares `dsh.bundle.patch` in `package.json`, so `dsh plugin add` wires it into the profile's bundle stack automatically — no manual YAML needed. The engine boots once on the host plane and stays resident; the Web panel is served via the `dsh.client` manifest.
 
