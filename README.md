@@ -26,9 +26,19 @@
 ## 安装
 
 ```bash
-dsh plugin --profile web add "<本包路径>"
+# 1. 下载源码
+git clone https://github.com/alingalingling/bilibili-ticketer.git
+cd bilibili-ticketer
+
+# 2. 安装依赖
+pnpm install
+
+# 3. 装进 web profile 并启动
+dsh plugin --profile web add .
 dsh web
 ```
+
+`dsh web` 等价于 `dsh --profile web`。如果你用的是打包好的 tgz，`add` 后面换成 tgz 路径即可，例如 `dsh plugin --profile web add ./dsh-bilibili-ticket-0.1.19.tgz`。
 
 本包在 `package.json` 声明了 `dsh.bundle.patch`，`dsh plugin add` 会自动把它加入 profile 的 bundles 层，无需手写 YAML。插件在宿主平面启动一次，后台引擎常驻；网页面板通过 `dsh.client` 清单自动加载。
 
